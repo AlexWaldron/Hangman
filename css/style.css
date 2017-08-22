@@ -1,0 +1,46 @@
+.line{
+  height: 1.5rem;
+  width: 0px;
+  border: 1px solid black;
+  margin: 10% 10px;
+  align-items: center;
+  display: inline-block;
+}
+.letter{
+  display:inline-block;
+}
+
+#hanged{
+  position: relative;
+  margin: 0;
+  height: 270px;
+  left: 380px;
+  bottom: 150px;
+
+}
+
+#play{
+  position: fixed;
+}
+
+#post{
+  margin: 0 auto;
+  display: none;
+
+}
+#alphabet{
+  position: relative;
+  left: 25%;
+  top: 90%;
+}
+
+#lineRow{
+  margin: 5%;
+}
+
+
+
+body{
+  height: 100%;
+  width:auto;
+}

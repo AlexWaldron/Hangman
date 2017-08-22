@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+
+  </head>
+  <body>
+    <button class='play col s1 l1'>PLAY THIS GAME</button>
+
+    <div class='container board'>
+      <img class='responsive-img' id=hanged src="images/meeseeks.jpg">
+      <img class='responsive-img' id=post src="images/hangman_post_head.jpg">
+    </div>
+
+    <div class="row col s12" id='lineRow'> </div>
+
+    <div class="container col s12" id="alphabet">
+      <div class="row col s6">
+        <button class="letter">A</button>
+        <button class="letter">B</button>
+        <button class="letter">C</button>
+        <button class="letter">D</button>
+        <button class="letter">E</button>
+        <button class="letter">F</button>
+        <button class="letter">G</button>
+        <button class="letter">H</button>
+        <button class="letter">I</button>
+        <button class="letter">J</button>
+        <button class="letter">K</button>
+        <button class="letter">L</button>
+        <button class="letter">M</button>
+      </div>
+      <div class="row col s6">
+        <button class="letter">N</button>
+        <button class="letter">O</button>
+        <button class="letter">P</button>
+        <button class="letter">Q</button>
+        <button class="letter">R</button>
+        <button class="letter">S</button>
+        <button class="letter">T</button>
+        <button class="letter">U</button>
+        <button class="letter">V</button>
+        <button class="letter">W</button>
+        <button class="letter">X</button>
+        <button class="letter">Y</button>
+        <button class="letter">Z</button>
+      </div>
+    </div>
+    <script  src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="js/game.js"></script>
+  </body>
+
+</html>
