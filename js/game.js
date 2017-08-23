@@ -8,6 +8,7 @@ $(function() {
   var url = 'http://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&includePartOfSpeech=noun&minCorpusCount=8000&maxCorpusCount=-1&minDictionaryCount=3&maxDictionaryCount=-1&minLength=6&maxLength=12&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
 
 
+
 function getRandomWord(){
   $.ajax({
     url: url,
@@ -20,7 +21,7 @@ function getRandomWord(){
     word = word.toUpperCase();
     console.log("variable: ",word);
     createBoard();
-    // return word;
+
   })
 }
 
@@ -35,13 +36,12 @@ function getRandomWord(){
     inPlay = true;
     getRandomWord();
     console.log("global: ",word);
-    // createBoard();
 
     $('#post').css('display', 'inline-block');
-    $('.letter').prop("disabled", false);
+    $('.letter').css('display','inline-block').prop("disabled", false);
     $('.play').prop("disabled", true);
   });
-//
+
   $('.letter').on('click', checkLetter);
   $('.reset').on('click', reset);
 
@@ -83,7 +83,7 @@ function getRandomWord(){
       console.log("length", word.length);
 
       if (counterW === (word.length-1)) {
-        alert('woah dude you won!');
+        swal("Good job!", "You Won!", "success")
       }
       var $lines = $('.line');
       for (var i = 0; i < $lines.length; i++) {
@@ -98,7 +98,8 @@ function getRandomWord(){
     } else {
       counterL++;
       displayMeeseeks(counterL);
-      console.log(('WRONG! YOU ARE DUMB'));
+      sweetAlert("Exsitance is Pain to a Meeseeks...", "Kill me!", "error");
+
     }
   }
 
@@ -127,13 +128,17 @@ function getRandomWord(){
 
       case 6:
         $('#right-leg').css('display', 'block');
-        alert('game over');
+        setTimeout(function(){
+          swal("You Lose!", "loser!", "error")
+        },1000);
         $('.letter').prop("disabled", true);
         break;
       default:
         console.log('keep guessing');
     }
   }
+
+
 
 
 
