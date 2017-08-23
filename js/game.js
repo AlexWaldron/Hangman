@@ -1,63 +1,138 @@
 $(function() {
   console.log('loaded');
-  var words = ["Foosball"];
-  var counter = 0;
-  var firstWord = words[0].toUpperCase();
+  var word;
+  var firstWord;
+  var counterL = 0;
+  var counterW = 0;
   var inPlay = false;
+  var url = 'http://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&includePartOfSpeech=noun&minCorpusCount=8000&maxCorpusCount=-1&minDictionaryCount=3&maxDictionaryCount=-1&minLength=6&maxLength=12&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
 
-  if(!inPlay){
+
+function getRandomWord(){
+  $.ajax({
+    url: url,
+    type: "GET",
+    dataType: "json"
+  })
+  .done(function(res){
+    console.log(res.word);
+    word = res.word;
+    word = word.toUpperCase();
+    console.log("variable: ",word);
+    createBoard();
+    // return word;
+  })
+}
+
+
+
+
+  if (!inPlay) {
     $('.letter').prop("disabled", true);
-
   }
-
 
   $('.play').on('click', function() {
     inPlay = true;
-    createBoard();
-    $('img').css('display', 'inline-block');
+    getRandomWord();
+    console.log("global: ",word);
+    // createBoard();
+
+    $('#post').css('display', 'inline-block');
     $('.letter').prop("disabled", false);
+    $('.play').prop("disabled", true);
   });
+//
+  $('.letter').on('click', checkLetter);
+  $('.reset').on('click', reset);
 
-    $('.letter').on('click', checkLetter);
+
+  function reset() {
+    console.log('something happens');
+    word='';
+    getRandomWord();
+    //ajax call to random word
+    //push random word into word
+    counterW = 0;
+    counterL = 0;
+    displayMeeseeks(counterL);
+    $('button').prop("disabled", false).css('background', 'lightgray');
+    $('#lineRow').empty();
+    console.log(word);
+
+    createBoard(word);
+    console.log(counterW, counterL);
+  }
 
 
 
-    function createBoard() {
-      console.log(inPlay);
-      for (var i = 0; i < firstWord.length; i++) {
-        var line = $('<div>').addClass('line col s1').attr('id', firstWord[i]);
-        console.log('line', line);
-        $('#lineRow').append(line);
-      }
+  function createBoard() {
+    console.log("the word is: ", word);
+    for (var i = 0; i < word.length; i++) {
+      var line = $('<div>').addClass('line col s1').attr('id', word[i]);
+      console.log('line', line);
+      $('#lineRow').append(line);
     }
+  }
 
-    function checkLetter() {
-      counter++;
-      console.log('counter',counter);
+  function checkLetter() {
 
-        if(counter === 6){
-          alert('game over');
-          $('.letter').prop("disabled", true);
-
-
-        }
-      var guess = $(this).html()
-      console.log(guess);
-      $(this).prop("disabled", true);
-      if (firstWord.indexOf(guess) >= 0) {
-        var $lines = $('.line');
-        for (var i = 0; i < $lines.length; i++) {
-          if ($lines[i].id === guess) {
-            $lines[i].innerHTML = guess;
-            console.log($lines[i]);
-          }
-        }
-
-      } else {
-        console.log(('WRONG! YOU ARE DUMB'));
+    var guess = $(this).html()
+    console.log(guess);
+    $(this).prop("disabled", true).css('background', 'black');
+    if (word.indexOf(guess) >= 0) {
+      console.log("length", word.length);
+      counterW++;
+      console.log(counterW);
+      if (counterW === (word.length-1)) {
+        alert('woah dude you won!');
       }
-      return counter;
+      var $lines = $('.line');
+      for (var i = 0; i < $lines.length; i++) {
+        if ($lines[i].id === guess) {
+          $lines[i].innerHTML = guess;
+          console.log($lines[i]);
+        }
+      }
+
+    } else {
+      counterL++;
+      displayMeeseeks(counterL);
+      console.log(('WRONG! YOU ARE DUMB'));
     }
+  }
+
+  function displayMeeseeks(counterL) {
+    switch (counterL) {
+      case 0:
+        $('.meeseeks').css('display', 'none');
+        break;
+      case 1:
+        $('#head').css('display', 'block');
+        break;
+      case 2:
+        $('#body').css('display', 'block');
+        break;
+      case 3:
+        $('#left-arm').css('display', 'block');
+        break;
+
+      case 4:
+        $('#right-arm').css('display', 'block');
+        break;
+
+      case 5:
+        $('#left-leg').css('display', 'block');
+        break;
+
+      case 6:
+        $('#right-leg').css('display', 'block');
+        alert('game over');
+        $('.letter').prop("disabled", true);
+        break;
+      default:
+        console.log('keep guessing');
+    }
+  }
 
 
 

@@ -9,46 +9,53 @@
   </head>
   <body>
     <button class='play col s1 l1'>PLAY THIS GAME</button>
+    <button class='reset col s1 l1'>RESET</button>
 
     <div class='container board'>
-      <img class='responsive-img' id=hanged src="images/meeseeks.jpg">
-      <img class='responsive-img' id=post src="images/hangman_post_head.jpg">
+      <img class='meeseeks responsive-img' id='body' src="images/HANGMAN_body.png">
+      <img class='meeseeks responsive-img' id='head' src="images/HANGMAN_head.png">
+      <img class='meeseeks responsive-img' id='left-arm' src="images/HANGMAN_left-arm.png">
+      <img class='meeseeks responsive-img' id='left-leg' src="images/HANGMAN_left-leg.png">
+      <img class='meeseeks responsive-img' id='right-arm' src="images/HANGMAN_right-arm.png">
+      <img class='meeseeks responsive-img' id='right-leg' src="images/HANGMAN_right-leg.png">
+      <img class='responsive-img' id=post src="images/hangman_post_.jpg">
+
+      <div class="col s6" id="alphabet">
+        <div class="row col s3">
+          <button class="letter">A</button>
+          <button class="letter">B</button>
+          <button class="letter">C</button>
+          <button class="letter">D</button>
+          <button class="letter">E</button>
+          <button class="letter">F</button>
+          <button class="letter">G</button>
+          <button class="letter">H</button>
+          <button class="letter">I</button>
+          <button class="letter">J</button>
+          <button class="letter">K</button>
+          <button class="letter">L</button>
+          <button class="letter">M</button>
+        </div>
+        <div class="row col s3">
+          <button class="letter">N</button>
+          <button class="letter">O</button>
+          <button class="letter">P</button>
+          <button class="letter">Q</button>
+          <button class="letter">R</button>
+          <button class="letter">S</button>
+          <button class="letter">T</button>
+          <button class="letter">U</button>
+          <button class="letter">V</button>
+          <button class="letter">W</button>
+          <button class="letter">X</button>
+          <button class="letter">Y</button>
+          <button class="letter">Z</button>
+        </div>
+      </div>
     </div>
 
     <div class="row col s12" id='lineRow'> </div>
 
-    <div class="container col s12" id="alphabet">
-      <div class="row col s6">
-        <button class="letter">A</button>
-        <button class="letter">B</button>
-        <button class="letter">C</button>
-        <button class="letter">D</button>
-        <button class="letter">E</button>
-        <button class="letter">F</button>
-        <button class="letter">G</button>
-        <button class="letter">H</button>
-        <button class="letter">I</button>
-        <button class="letter">J</button>
-        <button class="letter">K</button>
-        <button class="letter">L</button>
-        <button class="letter">M</button>
-      </div>
-      <div class="row col s6">
-        <button class="letter">N</button>
-        <button class="letter">O</button>
-        <button class="letter">P</button>
-        <button class="letter">Q</button>
-        <button class="letter">R</button>
-        <button class="letter">S</button>
-        <button class="letter">T</button>
-        <button class="letter">U</button>
-        <button class="letter">V</button>
-        <button class="letter">W</button>
-        <button class="letter">X</button>
-        <button class="letter">Y</button>
-        <button class="letter">Z</button>
-      </div>
-    </div>
     <script  src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="js/game.js"></script>
   </body>
