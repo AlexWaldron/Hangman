@@ -81,14 +81,15 @@ function getRandomWord(){
     $(this).prop("disabled", true).css('background', 'black');
     if (word.indexOf(guess) >= 0) {
       console.log("length", word.length);
-      counterW++;
-      console.log(counterW);
+
       if (counterW === (word.length-1)) {
         alert('woah dude you won!');
       }
       var $lines = $('.line');
       for (var i = 0; i < $lines.length; i++) {
         if ($lines[i].id === guess) {
+          counterW++;
+          console.log(counterW);
           $lines[i].innerHTML = guess;
           console.log($lines[i]);
         }
