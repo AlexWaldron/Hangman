@@ -8,17 +8,32 @@
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <button class='play col s1 l1'>PLAY THIS GAME</button>
-    <button class='reset col s1 l1'>RESET</button>
+    <div>
+      <button class='play col s1 l1'>PLAY THIS GAME</button>
+      <button class='reset col s1 l1'>RESET</button>
+    </div>
+    <p>
+       Come play Hang Man! Click the play the button in order to get the game started. The blanks for the word will
+       appear and then you can start guessing! Every time you type a letter one of two things will happen, either you are wrong
+       and message will appear from our hanging man or you get the guess correct! When you guess correctly the letter you guessed
+       will appear within the blanks. That's the game folks and remember... Existance is pain to a Meeseeks! So don't worry if you
+       lose this round you can always click the reset button to get a new word.
+    </p>
 
-    <div class='container board'>
+    <div class='container board' style="
+    background-image: url('images/hangman_post_.jpg');
+    width: 500px;
+    height: 480px;
+    position: relative;
+    ">
+
       <img class='meeseeks responsive-img' id='body' src="images/HANGMAN_body.png">
       <img class='meeseeks responsive-img' id='head' src="images/HANGMAN_head.png">
       <img class='meeseeks responsive-img' id='left-arm' src="images/HANGMAN_left-arm.png">
       <img class='meeseeks responsive-img' id='left-leg' src="images/HANGMAN_left-leg.png">
       <img class='meeseeks responsive-img' id='right-arm' src="images/HANGMAN_right-arm.png">
       <img class='meeseeks responsive-img' id='right-leg' src="images/HANGMAN_right-leg.png">
-      <img class='responsive-img' id=post src="images/hangman_post_.jpg">
+</div>
 
       <div class="col s6" id="alphabet">
         <div class="row col s3">
@@ -52,7 +67,7 @@
           <button class="letter">Z</button>
         </div>
       </div>
-    </div>
+
 
     <div class="row col s12" id='lineRow'> </div>
     <script src="css/sweetalert-master/dist/sweetalert.min.js"></script>

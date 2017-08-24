@@ -34,15 +34,21 @@ function getRandomWord(){
 
   $('.play').on('click', function() {
     inPlay = true;
+    $('p').css('display', 'none');
     getRandomWord();
     console.log("global: ",word);
-
-    $('#post').css('display', 'inline-block');
-    $('.letter').css('display','inline-block').prop("disabled", false);
     $('.play').prop("disabled", true);
   });
 
-  $('.letter').on('click', checkLetter);
+  window.onkeydown = function(e){
+    guess = String.fromCharCode(e.keyCode);
+    checkLetter(guess);
+}
+  $('.letter').on('click',function(e){
+      guess = $(this).html();
+      $(this).prop("disabled", true).css('background', 'black');
+      checkLetter(guess);
+   });
   $('.reset').on('click', reset);
 
 
@@ -74,11 +80,9 @@ function getRandomWord(){
     }
   }
 
-  function checkLetter() {
+  function checkLetter(guess) {
 
-    var guess = $(this).html()
     console.log(guess);
-    $(this).prop("disabled", true).css('background', 'black');
     if (word.indexOf(guess) >= 0) {
       console.log("length", word.length);
 
