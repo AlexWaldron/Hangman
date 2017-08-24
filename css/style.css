@@ -5,19 +5,16 @@
   display: inline-block;
 }
 
+
 .wrongGuess{
   height: 20%;
   margin: 0;
 }
 
-header{
-  display: inline-block;
-}
-
 aside{
   font-size: 2rem;
   margin: 0;
-  width: 5%;
+  width: 20%;
   height: 100%;
 }
 
@@ -132,9 +129,8 @@ body {
         background: tomato;
         font-size: 2rem;
         margin: 0;
-        width: 20%;
+        width: 10%;
         padding-bottom: 80%;
         height: 100%;
       }
     }
-}
