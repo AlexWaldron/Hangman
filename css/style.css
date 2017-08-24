@@ -112,7 +112,7 @@ body {
 
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     #alphabet .row{
         display: flex;
         flex-direction: row;
