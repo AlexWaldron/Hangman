@@ -36,6 +36,7 @@ function getRandomWord(){
     guess = String.fromCharCode(e.keyCode);
     checkLetter(guess);
 }
+
   $('.letter').on('click',function(e){
       guess = $(this).html();
       $(this).prop("disabled", true).css('background', 'black');
@@ -73,7 +74,7 @@ function getRandomWord(){
       }
       let $lines = $('.line');
       for (var i = 0; i < $lines.length; i++) {
-        if ($lines[i].id === guess) {
+        if ($lines[i].id === guess && $lines[i].innerHTML!=guess) {
           counterW++;
           keepScore();
           $lines[i].innerHTML = guess;
@@ -81,11 +82,14 @@ function getRandomWord(){
       }
 
     } else {
+      if()
       counterL++;
       $('.wrongGuess').append(`${guess}, `);
       displayMeeseeks(counterL);
 
     }
+
+
   }
 
   function keepScore(){

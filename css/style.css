@@ -21,10 +21,16 @@ aside{
 #alphabet .row {
   display: none;
 }
+body {
+  font-family: 'Bree Serif', serif;
+  height: 100%;
+  width: auto;
+  background: #EC978F;
 
+}
 section{
   width: 80%;
-  background-color: #7DA995;
+  background-color: #AEE889;
   min-width: 80%;
   max-width: 80%;
 }
@@ -54,7 +60,7 @@ h5{
 }
 
 button {
-  background: #D7C27C;
+  background: #EC978F;
 }
 
 #head {
@@ -114,13 +120,7 @@ button {
   width: 90%;
 }
 
-body {
-  font-family: 'Bree Serif', serif;
-  height: 100%;
-  width: auto;
-  background: #D7C27C;
 
-}
 
 @media only screen and (max-width: 900px) {
 #alphabet .row{
@@ -136,7 +136,7 @@ body {
     }
 
       aside{
-        
+
         font-size: 2rem;
         margin: 0;
         padding-bottom: 80%;
