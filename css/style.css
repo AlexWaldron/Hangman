@@ -24,11 +24,21 @@ aside{
 
 section{
   width: 80%;
-  background-color: #8AE67F;
+  background-color: #7DA995;
   min-width: 80%;
   max-width: 80%;
 }
 
+h5{
+  display: inline-block;
+  margin: 0 10%;
+}
+
+.subTitle{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
 
 #p{
   font-size: 1.2em;
@@ -44,7 +54,7 @@ section{
 }
 
 button {
-  background: lightblue;
+  background: #D7C27C;
 }
 
 #head {
@@ -108,7 +118,7 @@ body {
   font-family: 'Bree Serif', serif;
   height: 100%;
   width: auto;
-  background: tomato;
+  background: #D7C27C;
 
 }
 
@@ -126,7 +136,7 @@ body {
     }
 
       aside{
-        background: tomato;
+        
         font-size: 2rem;
         margin: 0;
         padding-bottom: 80%;

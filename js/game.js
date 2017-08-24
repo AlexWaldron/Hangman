@@ -75,6 +75,7 @@ function getRandomWord(){
       for (var i = 0; i < $lines.length; i++) {
         if ($lines[i].id === guess) {
           counterW++;
+          keepScore();
           $lines[i].innerHTML = guess;
         }
       }
@@ -87,6 +88,13 @@ function getRandomWord(){
     }
   }
 
+  function keepScore(){
+    score = 0
+    for(let i=0; i<counterW; i++){
+      score = score + 1;
+    }
+    $('#score').html(score)
+  }
   function displayMeeseeks(counterL) {
     switch (counterL) {
       case 0:
