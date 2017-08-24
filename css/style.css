@@ -119,15 +119,9 @@ body {
     align-items: center;
     justify-content: center;
 
-}
-}
-
-@media only screen and (max-width: 500px) {
-
-
+  }
     .main{
       width: 90%;
-    }
 
       aside{
         background: tomato;
@@ -138,3 +132,8 @@ body {
         height: 100%;
       }
     }
+
+}
+}
+
+@media only screen and (max-width: 500px) {
