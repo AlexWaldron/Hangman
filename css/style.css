@@ -121,7 +121,7 @@ body {
 
   }
     .main{
-      width: 90%;
+      width: 100%;
       margin: 0;
     }
 
@@ -129,7 +129,6 @@ body {
         background: tomato;
         font-size: 2rem;
         margin: 0;
-        width: 10%;
         padding-bottom: 80%;
         height: 100%;
       }
