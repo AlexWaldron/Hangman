@@ -1,15 +1,23 @@
 .line {
   height: 2rem;
-  border: 1px solid black;
-  margin: 5%;
+  border: 2px solid black;
+  margin-left: 5%;
+  display: inline-block;
+}
+
+.wrongGuess{
+  height: 20%;
+  margin: 0;
+}
+
+header{
   display: inline-block;
 }
 
 aside{
-  background: tomato;
+  font-size: 2rem;
   margin: 0;
-  width: 20%;
-  padding-bottom: 80%;
+  width: 5%;
   height: 100%;
 }
 
@@ -31,10 +39,6 @@ section{
   border: 2px solid black;
 }
 
-aside p{
-  display: block;
-}
-
 
 #x{
   display: none;
@@ -43,7 +47,7 @@ aside p{
 }
 
 button {
-  background: lightgray;
+  background: lightblue;
 }
 
 #head {
@@ -100,13 +104,15 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  width: 90%;
 }
 
 body {
   font-family: 'Bree Serif', serif;
   height: 100%;
   width: auto;
-  background: lightgray;
+  background: tomato;
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -116,5 +122,19 @@ body {
         align-items: center;
         justify-content: center;
 
+    }
+
+    .main{
+      width: 90%;
+    }
+
+      aside{
+        background: tomato;
+        font-size: 2rem;
+        margin: 0;
+        width: 20%;
+        padding-bottom: 80%;
+        height: 100%;
+      }
     }
 }

@@ -16,10 +16,8 @@ function getRandomWord(){
     dataType: "json"
   })
   .done(function(res){
-    console.log(res.word);
     word = res.word;
     word = word.toUpperCase();
-    console.log("variable: ",word);
     createBoard();
 
   })
@@ -27,16 +25,10 @@ function getRandomWord(){
 
 
 
-
-  if (!inPlay) {
-    $('.letter').prop("disabled", true);
-  }
-
   $('.play').on('click', function() {
-    inPlay = true;
+
     $('p').css('display', 'none');
     getRandomWord();
-    console.log("global: ",word);
     $('.play').prop("disabled", true);
   });
 
@@ -53,20 +45,15 @@ function getRandomWord(){
 
 
   function reset() {
-    console.log('something happens');
     word='';
     getRandomWord();
-    //ajax call to random word
-    //push random word into word
     counterW = 0;
     counterL = 0;
     displayMeeseeks(counterL);
-    $('button').prop("disabled", false).css('background', 'lightgray');
+    $('.letter').prop("disabled", false).css('background', 'lightgray');
     $('#lineRow').empty();
-    console.log(word);
-
+    $('.wrongGuess').empty();
     createBoard(word);
-    console.log(counterW, counterL);
   }
 
 
@@ -74,18 +61,13 @@ function getRandomWord(){
   function createBoard() {
     console.log("the word is: ", word);
     for (var i = 0; i < word.length; i++) {
-      var line = $('<div>').addClass('line col s1 l6').attr('id', word[i]);
-      console.log('line', line);
+      var line = $('<div>').addClass('line center-align col s1 l6').attr('id', word[i]);
       $('#lineRow').append(line);
     }
   }
 
   function checkLetter(guess) {
-
-    console.log(guess);
     if (word.indexOf(guess) >= 0) {
-      console.log("length", word.length);
-
       if (counterW === (word.length-1)) {
         swal("Good job!", "You Won!", "success")
       }
@@ -99,7 +81,7 @@ function getRandomWord(){
 
     } else {
       counterL++;
-      $('aside').append(guess);
+      $('.wrongGuess').append(`${guess}, `);
       displayMeeseeks(counterL);
 
     }
@@ -164,10 +146,5 @@ function getRandomWord(){
         break;
     }
   }
-
-
-
-
-
 
 })
