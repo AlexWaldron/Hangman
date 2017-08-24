@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Hangman Game</title>
-    <link rel="stylesheet" type="text/css" href="css/sweetalert-master/dist/sweetalert.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
-  </head>
-  <body>
-    <div>
-      <button class='play col s1 l1'>PLAY THIS GAME</button>
-      <button class='reset col s1 l1'>RESET</button>
-    </div>
-    <p>
-       Come play Hang Man! Click the play the button in order to get the game started. The blanks for the word will
-       appear and then you can start guessing! Every time you type a letter one of two things will happen, either you are wrong
-       and message will appear from our hanging man or you get the guess correct! When you guess correctly the letter you guessed
-       will appear within the blanks. That's the game folks and remember... Existance is pain to a Meeseeks! So don't worry if you
-       lose this round you can always click the reset button to get a new word.
-    </p>
 
-    <div class='container board' style="
-    background-image: url('images/hangman_post_.jpg');
+<head>
+  <meta charset="utf-8">
+  <title>Hangman Game</title>
+  <link rel="stylesheet" type="text/css" href="css/sweetalert-master/dist/sweetalert.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+  <div>
+    <button class='play col s1 l1'>PLAY THIS GAME</button>
+    <button class='reset col s1 l1'>RESET</button>
+  </div>
+
+  <div class='main'>
+    <aside>
+      <h4>Wrong guesses: </h3>
+      
+    </aside>
+    <section class='container'>
+      <div class='container'>
+        <h1>Come play Hang Man!</h1>
+        <p id='p'>
+          Click the play the button in order to get the game started.<br> The blanks for the word will appear and then you can start guessing!<br> Every time you type a letter one of two things will happen,<br> either you are wrong and message will appear
+          from our hanging man<br> or you get the guess correct! When you guess correctly the letter you guessed<br> will appear within the blanks. That's the game folks and remember...<br> Existance is pain to a Meeseeks! So don't worry if you<br> lose
+          this round you can always click the reset button to get a new word.<br>
+        </p>
+      </div>
+
+      <div class='container board' style="
+    background-image: url('images/hangman.png');
     width: 500px;
     height: 480px;
     position: relative;
     ">
+        <img id='x' src="images/x.png">
+        <img class='meeseeks responsive-img' id='body' src="images/HANGMAN_body.png">
+        <img class='meeseeks responsive-img' id='head' src="images/HANGMAN_head.png">
+        <img class='meeseeks responsive-img' id='left-arm' src="images/HANGMAN_left-arm.png">
+        <img class='meeseeks responsive-img' id='left-leg' src="images/HANGMAN_left-leg.png">
+        <img class='meeseeks responsive-img' id='right-arm' src="images/HANGMAN_right-arm.png">
+        <img class='meeseeks responsive-img' id='right-leg' src="images/HANGMAN_right-leg.png">
+      </div>
 
-      <img class='meeseeks responsive-img' id='body' src="images/HANGMAN_body.png">
-      <img class='meeseeks responsive-img' id='head' src="images/HANGMAN_head.png">
-      <img class='meeseeks responsive-img' id='left-arm' src="images/HANGMAN_left-arm.png">
-      <img class='meeseeks responsive-img' id='left-leg' src="images/HANGMAN_left-leg.png">
-      <img class='meeseeks responsive-img' id='right-arm' src="images/HANGMAN_right-arm.png">
-      <img class='meeseeks responsive-img' id='right-leg' src="images/HANGMAN_right-leg.png">
-</div>
 
       <div class="col s6" id="alphabet">
         <div class="row col s3">
@@ -68,11 +80,12 @@
         </div>
       </div>
 
-
-    <div class="row col s12" id='lineRow'> </div>
-    <script src="css/sweetalert-master/dist/sweetalert.min.js"></script>
-    <script  src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="js/game.js"></script>
-  </body>
+      <div class="row col s12" id='lineRow'> </div>
+    </section>
+  </div>
+  <script src="css/sweetalert-master/dist/sweetalert.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="js/game.js"></script>
+</body>
 
 </html>

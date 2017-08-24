@@ -74,7 +74,7 @@ function getRandomWord(){
   function createBoard() {
     console.log("the word is: ", word);
     for (var i = 0; i < word.length; i++) {
-      var line = $('<div>').addClass('line col s1').attr('id', word[i]);
+      var line = $('<div>').addClass('line col s1 l6').attr('id', word[i]);
       console.log('line', line);
       $('#lineRow').append(line);
     }
@@ -89,20 +89,18 @@ function getRandomWord(){
       if (counterW === (word.length-1)) {
         swal("Good job!", "You Won!", "success")
       }
-      var $lines = $('.line');
+      let $lines = $('.line');
       for (var i = 0; i < $lines.length; i++) {
         if ($lines[i].id === guess) {
           counterW++;
-          console.log(counterW);
           $lines[i].innerHTML = guess;
-          console.log($lines[i]);
         }
       }
 
     } else {
       counterL++;
+      $('aside').append(guess);
       displayMeeseeks(counterL);
-      sweetAlert("Exsitance is Pain to a Meeseeks...", "Kill me!", "error");
 
     }
   }
@@ -114,31 +112,56 @@ function getRandomWord(){
         break;
       case 1:
         $('#head').css('display', 'block');
+        $('#x').css({
+       opacity: 0,
+       display: 'block'
+   }).animate({opacity:1},1000).fadeOut(1000);
+
         break;
       case 2:
         $('#body').css('display', 'block');
+        $('#x').css({
+       opacity: 0,
+       display: 'block'
+   }).animate({opacity:1},1000).fadeOut(1000);
         break;
       case 3:
         $('#left-arm').css('display', 'block');
+        $('#x').css({
+       opacity: 0,
+       display: 'block'
+   }).animate({opacity:1},1000).fadeOut(1000);
         break;
 
       case 4:
         $('#right-arm').css('display', 'block');
+        $('#x').css({
+       opacity: 0,
+       display: 'block'
+   }).animate({opacity:1},1000).fadeOut(1000);
         break;
 
       case 5:
         $('#left-leg').css('display', 'block');
+        $('#x').css({
+       opacity: 0,
+       display: 'block'
+   }).animate({opacity:1},1000).fadeOut(1000);
         break;
 
       case 6:
         $('#right-leg').css('display', 'block');
         setTimeout(function(){
           swal("You Lose!", "loser!", "error")
-        },1000);
+        },300);
+        let $lines = $('.line');
+        for (var i = 0; i < $lines.length; i++) {
+          if ($lines[i].innerHTML === '') {
+            $lines[i].innerHTML = $lines[i].id;
+          }
+        }
         $('.letter').prop("disabled", true);
         break;
-      default:
-        console.log('keep guessing');
     }
   }
 
