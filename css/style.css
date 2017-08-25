@@ -7,6 +7,8 @@ body {
 
 section{
   width: 80%;
+
+  margin: 0 auto;
 }
 
 .main{
@@ -54,8 +56,6 @@ aside{
 
 .board{
   width: 60%;
-  min-width: 60%;
-  max-width: 60%;
 }
 
 button {
@@ -102,32 +102,32 @@ h5{
 }
 
 #head {
-  left: 39%;
+  left: 77%;
   top: 24%;
 }
 
 #body {
-  left: 39%;
+  left: 77%;
   top: 28%;
 }
 
 #left-arm {
-  left: 36.9%;
+  left: 72.9%;
   top: 21%;
 }
 
 #right-arm {
-  left: 42.3%;
+  left: 83.3%;
   top: 22%;
 }
 
 #left-leg {
-  left: 37.3%;
+  left: 73.3%;
   top: 38%;
 }
 
 #right-leg {
-  left: 41%;
+  left: 81%;
   top: 38%;
 }
 
