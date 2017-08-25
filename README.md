@@ -30,3 +30,12 @@ I first tried to get a board to appear based on the number of letters of a word.
 the same as their letter. Then I created a function attached to a click listener that basically checked if the letter they clicked was equal to the ID of any box then place that letter in the box with the matching ID. After that I generalized the function so that I was
 able to type on my keyboard as well as click the buttons so that people playing on a lap top didn't have to click so much. I then added
 some media queries so that mobile users would use the buttons and laptop users have to use the keyboard. And from there it was all styling and adding fun features like the Meeseeks soundbyte!
+
+## Trello
+ https://trello.com/b/BLUYzfX6/hangman
+
+## wireframe
+I drew out a basic layout of my page after I thought about how I wanted the user to be able to play the game.
+<p align="center">
+  <img src="images/wireframe.jpg"/>
+</p>
