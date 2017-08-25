@@ -33,7 +33,6 @@ $(function() {
   $('.play').on('click', function() {
     $('p').css('display', 'none');
     getRandomWord();
-    word = word.toUpperCase();
     $('.play').prop("disabled", true);
   });
 
@@ -70,13 +69,14 @@ $(function() {
 
   function reset() {
     guesses = [];
+    getRandomWord();
     counterW = 0;
     counterL = 0;
     displayMeeseeks(counterL);
     $('.letter').prop("disabled", false).css('background', 'lightgray');
     $('#lineRow').empty();
     $('.wrongGuess').empty();
-    createBoard(word);
+    // createBoard(word);
   }
 
   function keepScore() {
