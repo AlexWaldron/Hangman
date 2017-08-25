@@ -4,9 +4,10 @@ $(function() {
   var firstWord;
   var counterL = 0;
   var counterW = 0;
-  var score = 0
+  var score = 0;
   var guesses = [];
-   var url = 'https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&includePartOfSpeech=noun&minCorpusCount=8000&maxCorpusCount=-1&minDictionaryCount=3&maxDictionaryCount=-1&minLength=6&maxLength=12&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+  var sample = new Audio('js/Meeseeks.mp3');
+  var url = 'https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&includePartOfSpeech=noun&minCorpusCount=8000&maxCorpusCount=-1&minDictionaryCount=3&maxDictionaryCount=-1&minLength=6&maxLength=12&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
 
 
 
@@ -33,7 +34,6 @@ $(function() {
     $('p').css('display', 'none');
     getRandomWord();
     word = word.toUpperCase();
-    createBoard();
     $('.play').prop("disabled", true);
   });
 
@@ -69,8 +69,7 @@ $(function() {
   }
 
   function reset() {
-    word = '';
-    getRandomWord();
+    guesses = [];
     counterW = 0;
     counterL = 0;
     displayMeeseeks(counterL);
@@ -104,6 +103,7 @@ $(function() {
 
     } else {
       counterL++;
+      sample.play();
       $('.wrongGuess').append(`${guess}, `);
       displayMeeseeks(counterL);
     }

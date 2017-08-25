@@ -19,4 +19,11 @@ but overall making this was a very fun experience!
 I currently added a timer and score keeper, but I would eventually like to make it into a high scores table so that multiple people
 can play and compete to see who's the best at hangman. I also want to do more with making it look nicer and more mobile friendly.
 
-##
+## Bugs
+The game is pretty functional right now! I had to work through a couple of the bugs with the letter check function
+because if before you could just enter any correct letter that the word contained and then just keep hitting it in order to window
+but I handled that by adding the guesses to an array and first checking the array before checking the letter against the random word.
+
+## Process
+
+I first tried to 

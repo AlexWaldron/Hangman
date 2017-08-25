@@ -3,14 +3,17 @@ body {
   height: 100%;
   width: auto;
   background: #8FD8D2;
-  /*color:#EDB0EB;*/
+}
+
+section{
+  width: 80%;
 }
 
 .main{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 100%;
+
 }
 
 /*******BOXES FOR THE LETTERS OF THE RANDOM WORD*******/
@@ -34,9 +37,10 @@ body {
 
 aside{
   font-size: 2rem;
+  position: relative;
   margin: 0;
   width: 20%;
-  height: 100%;
+  height: 10%;
 }
 
 .wrongGuess{
@@ -92,39 +96,38 @@ h5{
 
 .meeseeks {
   display: none;
-  max-height: 300px;
-  max-width: 200px;
-  z-index: 10;
+  height: 70px;
+  width: 50px;
   position: absolute;
 }
 
 #head {
-  left: 50%;
+  left: 39%;
   top: 24%;
 }
 
 #body {
-  left: 50%;
+  left: 39%;
   top: 28%;
 }
 
 #left-arm {
-  left: 47.9%;
+  left: 36.9%;
   top: 21%;
 }
 
 #right-arm {
-  left: 54%;
+  left: 42.3%;
   top: 22%;
 }
 
 #left-leg {
-  left: 48.3%;
+  left: 37.3%;
   top: 38%;
 }
 
 #right-leg {
-  left: 52%;
+  left: 41%;
   top: 38%;
 }
 
@@ -144,7 +147,6 @@ h5{
     }
 
       aside{
-
         font-size: 2rem;
         margin: 0;
         padding-bottom: 80%;
