@@ -1,3 +1,20 @@
+body {
+  font-family: 'Bree Serif', serif;
+  height: 100%;
+  width: auto;
+  background: #8FD8D2;
+  /*color:#EDB0EB;*/
+}
+
+.main{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/*******BOXES FOR THE LETTERS OF THE RANDOM WORD*******/
+
 .line {
   height: 2rem;
   border: 2px solid black;
@@ -5,11 +22,15 @@
   display: inline-block;
 }
 
-
-.wrongGuess{
-  height: 20%;
-  margin: 0;
+#lineRow {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 5% 0;
 }
+
+/*********ASIDE STYLING**********/
 
 aside{
   font-size: 2rem;
@@ -18,32 +39,27 @@ aside{
   height: 100%;
 }
 
+.wrongGuess{
+  height: 20%;
+  margin: 0;
+}
+
+
+
+/*********GAME BOARD***********/
+
+.board{
+  width: 60%;
+  min-width: 60%;
+  max-width: 60%;
+}
+
+button {
+  background: lightgray;
+}
+
 #alphabet .row {
   display: none;
-}
-body {
-  font-family: 'Bree Serif', serif;
-  height: 100%;
-  width: auto;
-  background: #EC978F;
-
-}
-section{
-  width: 80%;
-  background-color: #AEE889;
-  min-width: 80%;
-  max-width: 80%;
-}
-
-h5{
-  display: inline-block;
-  margin: 0 10%;
-}
-
-.subTitle{
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
 }
 
 #p{
@@ -52,15 +68,34 @@ h5{
   border: 2px solid black;
 }
 
-
 #x{
   display: none;
   margin: 0 auto;
-
 }
 
-button {
-  background: #EC978F;
+/*********TIMER********/
+.subTitle{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+
+
+h5{
+  display: inline-block;
+  margin: 0 10%;
+}
+
+
+/********MEESEEKS******/
+
+.meeseeks {
+  display: none;
+  max-height: 300px;
+  max-width: 200px;
+  z-index: 10;
+  position: absolute;
 }
 
 #head {
@@ -93,34 +128,7 @@ button {
   top: 38%;
 }
 
-.meeseeks {
-  display: none;
-  max-height: 300px;
-  max-width: 200px;
-  z-index: 10;
-  position: absolute;
-}
-
-#play {
-  position: fixed;
-}
-
-#lineRow {
-  display:flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 5% 0;
-}
-
-.main{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  width: 90%;
-}
-
-
+/******* MEDIA QUERY'S **************/
 
 @media only screen and (max-width: 900px) {
 #alphabet .row{

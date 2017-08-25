@@ -18,7 +18,7 @@ $(function() {
   }));
 
   // Reset button onClick
-  $(".reset").on('click', (function() {
+  $(".resetClock").on('click', (function() {
     if (timeUpdate) clearInterval(timeUpdate);
     setStopwatch(0, 0, 0, 0);
   }));

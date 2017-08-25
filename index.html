@@ -13,12 +13,12 @@
 
 <body>
 
-
   <div class='main'>
-    <aside>
+    <aside class='wordBank'>
       <h4>Wrong guesses: </h3>
       <div class="wrongGuess"></div>
     </aside>
+
     <section class='container'>
       <div class='container'>
         <header>
@@ -26,14 +26,15 @@
           <h1>Hang Man!</h1>
           <div class='gameInfo'>
           <button class='play col s1 l2'>PLAY THIS GAME</button>
-          <button class='reset col s1 l2'>RESET</button>
+          <button class='reset col s1 l2'>GET NEW PUZZLE</button>
+          <button class='resetClock col s1 l2'>Reset The Clock</button>
+
         </div>
         <div class='subTitle' id="time">
             <h5><span id="hours">00</span> :
             <span id="minutes">00</span> :
             <span id="seconds">00</span> ::
             <span id="milliseconds">000</span></h1>
-            <h5><span id='score'>Score: </span>0</h2>
         </div>
       </header>
         <p id='p'>
@@ -94,7 +95,14 @@
 
       <div class="row col s12" id='lineRow'> </div>
     </section>
+    <aside>
+        <h4>PUZZLES SOLVED:</h4>
+        <div class="scores">
+
+        </div>
+      </aside>
   </div>
+
   <script src="css/sweetalert-master/dist/sweetalert.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="js/timer.js"></script>
